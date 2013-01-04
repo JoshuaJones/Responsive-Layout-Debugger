@@ -1,0 +1,84 @@
+/* Begin Debug Code */
+body:before, .dimensions {
+	color: #000;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-size: 13px;
+	font-weight: 300;
+	position: fixed;
+	top: 0;
+	}
+body:before {
+	line-height: 24px;
+	text-align: center;
+	left: 0; right: 0;
+	z-index: 9995;
+	}
+.dimensions {
+	background: #f2f2f2;
+	border: 1px solid #ccc;
+	line-height: 22px;
+	padding: 0 10px;
+	right: 0;
+	z-index: 9999;
+	}
+.dimensions:before { content: attr(data-dimensions); display: inline-block; }
+
+/* Large Screens - Greater Than 1440px */
+@media only screen and (min-width: 1024px) {
+
+	body:before {
+		background: rgba(255, 0, 0, 0.5);
+		content: "Breakpoint: >1440px";
+		}
+
+}
+
+/* Desktop Screens - Greater Than 1024px */
+@media only screen and (min-width: 1024px) and (max-width: 1440px) {
+
+	body:before {
+		background: rgba(0, 0, 255, 0.5);
+		content: "Breakpoint: 1024px-1440px";
+		}
+
+}
+
+/* Tablets, Landscape, etc - 768px - 1024px */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+	body:before {
+		background: rgba(0, 255, 0, 0.5);
+		content: "Breakpoint: 768px - 1024px";
+		}
+
+}
+
+/* Portrait tablets, smartphones, etc - <768px */
+@media only screen and (max-width: 768px) {
+
+	body:before {
+		background: rgba(255, 255, 0, 0.5);
+		content: "Breakpoint: <768px";
+		}
+
+}
+
+/* Smartphones, smaller screens - <480px */
+@media only screen and (max-width: 480px) {
+
+	body:before {
+		background: rgba(255, 0, 255, 0.5);
+		content: "Breakpoint: <480px";
+		}
+
+}
+
+/* Low Res Devices, Super Small - <320px */
+@media only screen and (max-width: 320px) {
+
+	body:before {
+		background: rgba(0, 255, 255, 0.5);
+		content: "Breakpoint: <320px";
+		}
+
+}
