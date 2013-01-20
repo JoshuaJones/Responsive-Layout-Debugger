@@ -1,11 +1,16 @@
 // Debug Information
-var dimensionsDiv = document.createElement('div');
+(function() {
 
-dimensionsDiv.setAttribute('class', 'dimensions');
-dimensionsDiv.setAttribute('data-dimensions', 'w: ' + window.innerWidth + ' h: ' + window.innerHeight); 
+    var doc = document,
+        dimensionsDiv = doc.createElement("div");
 
-document.body.appendChild(dimensionsDiv);
+    dimensionsDiv.className = "dimensions";
+    dimensionsDiv.setAttribute('data-dimensions', 'w: ' + window.innerWidth + ' h: ' + window.innerHeight);
 
-window.onresize = function(event) {
-  dimensionsDiv.setAttribute('data-dimensions', 'w: ' + window.innerWidth + ' h: ' + window.innerHeight); 
-  }
+    doc.body.appendChild(dimensionsDiv);
+
+    window.onresize = function(e) {
+        dimensionsDiv.setAttribute('data-dimensions', 'w: ' + window.innerWidth + ' h: ' + window.innerHeight);
+    }
+
+}());
